@@ -1,6 +1,5 @@
 import logging
 from aiogram import Bot, Dispatcher, types
-from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from aiogram.types import ParseMode
 from aiogram.utils import executor
 
@@ -13,9 +12,6 @@ logging.basicConfig(level=logging.INFO)
 # Initialize bot and dispatcher
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
-
-# Add logging middleware
-dp.middleware.setup(LoggingMiddleware())
 
 # Handler for the start command
 @dp.message_handler(commands=['start'])
